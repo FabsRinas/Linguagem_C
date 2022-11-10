@@ -1,0 +1,26 @@
+/******************************************************************************
+
+Fabricio Rinaldi - Algoritmos e estruturas de dados
+
+*******************************************************************************/
+#include <stdio.h>
+#include <locale.h>
+
+int main()
+{
+    setlocale(LC_ALL,"Portuguese");
+    
+    
+    float salmes, qtdehora, salhora;
+    
+    printf("Digite o salário por hora: ");
+    scanf("%f", &salhora);
+    printf("Digite a quantidade de horas trabalhadas: ");
+    scanf("%f", &qtdehora);
+    
+    salmes = salhora * qtdehora;
+    
+    printf("O salário do funcionário mensal é de R$%.2f", salmes);
+
+    return 0;
+}
