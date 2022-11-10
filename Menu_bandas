@@ -1,0 +1,62 @@
+/******************************************************************************
+
+Fabrício Rinaldi - 10/10
+
+*******************************************************************************/
+#include <stdio.h>
+#define TAM 3
+typedef struct Banda{
+    char nome[20];
+    char estilo[20];
+    int integrante;
+    int rank;
+} BANDA;
+
+void leBanda (BANDA *v){
+    for (int i = 0; i < TAM; i++){
+        printf("\nDigite o nome da banda: ");
+        scanf("%s", v[i].nome);
+        printf("Digite o estilo musical da banda: ");
+        scanf("%s", v[i].estilo);
+        printf("Digite o número de integrantes da banda: ");
+        scanf("%d", &v[i].integrante);
+        printf("Digite o seu rank pessoal da banda: ");
+        scanf("%d", &v[i].rank);
+    }
+}
+void exibeBanda (BANDA *exibe) {
+    for (int i = 0; i < TAM; i++){
+        printf("\nA Banda %d é:",i);
+        printf("\nNome: %s",exibe[i].nome);
+        printf("\nEstilo: %s",exibe[i].estilo);
+        printf("\nQuantidade de integrantes: %d",exibe[i].integrante);
+        printf("\nRank pessoal: %d\n",exibe[i].rank);
+    }
+}
+
+void pesquisaBanda (BANDA *busca){
+    char aux[20];
+    int show = 0;
+    printf("\nDigite o estilo que deseja buscar: ");
+    scanf("%s", aux);
+    for (int i = 0; i < TAM; i++){
+        if(strcmp(aux,busca[i].estilo)==0){
+            printf("\nBanda encontrada: %s",busca[i].nome);
+            show = 1;
+        }
+    }
+    if (show == 0){
+        printf("\nNenhuma banda encontrada neste estilo!\n");
+    }
+}
+
+int main()
+{
+    BANDA v[TAM];
+    leBanda(v);
+    pesquisaBanda(v);
+    printf("\nListagem das bandas:");
+    exibeBanda(v);
+    
+    return 0;
+}
