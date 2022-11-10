@@ -1,0 +1,31 @@
+/******************************************************************************
+
+Fabrício Rinaldi - Algoritmo e estrutura de dados
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    int vet[6], vet2[6] t=0;
+    int i, r;
+    
+    for(i=0;i<6;i++){
+        printf("Informe um numero: \n");
+        scanf("%lf", &vet[i]);
+       vet2[i]=vet[i];
+    }
+    
+    for(i=0;i<3;i++){
+        for(r=3;r<6;r++){
+            vet[i]==vet2[r];
+            if(vet[i]==vet2){
+                
+            }
+        }
+    }
+    
+    printf("%.2lf", t/15);
+    
+    return 0;
+}
